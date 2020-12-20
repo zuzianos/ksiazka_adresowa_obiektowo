@@ -1,1 +1,2 @@
-1|Zuzia|1234|
+1|Zuzua|Zuzia|
+1|Tezs|Test|
