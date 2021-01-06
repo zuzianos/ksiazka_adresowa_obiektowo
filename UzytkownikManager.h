@@ -21,12 +21,14 @@ class UzytkownikManager
     int pobierzIdNowegoUzytkownika();
     bool czyIstniejeLogin(string login);
     PlikZUzytkownikami plikZUzytkownikami;
+    string wczytajLinie();
 
 public:
     UzytkownikManager(string nazwaPlikuZUzytkownikami): plikZUzytkownikami(nazwaPlikuZUzytkownikami){};
     void rejestracjaUzytkownika ();
     void wypiszWszystkichUzytkownikow();
     void wczytajUzytkownikowZPiku();
+    int logowanieUzytkownika();
 
 };
 #endif
