@@ -11,3 +11,7 @@ void KsiazkaAdresowa::wypiszWszystkichUzytkownikow()
 }
 
 
+int KsiazkaAdresowa::logowanieUzytkownika()
+{
+   uzytkownikManager.logowanieUzytkownika();
+};
