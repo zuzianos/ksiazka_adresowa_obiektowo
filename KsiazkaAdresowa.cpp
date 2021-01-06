@@ -1,5 +1,10 @@
 #include "KsiazkaAdresowa.h"
 
+KsiazkaAdresowa:: KsiazkaAdresowa()
+{
+    uzytkownikManager.wczytajUzytkownikowZPiku();
+}
+
 void KsiazkaAdresowa::rejestracjaUzytkownika()
 {
 uzytkownikManager.rejestracjaUzytkownika ();
