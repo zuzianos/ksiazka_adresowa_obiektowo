@@ -28,7 +28,8 @@ public:
     void rejestracjaUzytkownika ();
     void wypiszWszystkichUzytkownikow();
     void wczytajUzytkownikowZPiku();
-    int logowanieUzytkownika();
+    void logowanieUzytkownika();
+    void zmianaHaslaZalogowanegoUzytkownika();
 
 };
 #endif
