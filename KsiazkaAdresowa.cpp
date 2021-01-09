@@ -19,3 +19,13 @@ void KsiazkaAdresowa::zmianaHaslaZalogowanegoUzytkownika()
 {
    uzytkownikManager.zmianaHaslaZalogowanegoUzytkownika();
 };
+
+void KsiazkaAdresowa::wylogujUzytkownika()
+{
+   uzytkownikManager.wylogujUzytkownika();
+};
+
+bool KsiazkaAdresowa::czyUzytkownikJestZalogowany()
+{
+   uzytkownikManager.czyUzytkownikJestZalogowany();
+};

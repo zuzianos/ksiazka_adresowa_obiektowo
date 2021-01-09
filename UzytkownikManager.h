@@ -30,6 +30,8 @@ public:
     void wczytajUzytkownikowZPiku();
     void logowanieUzytkownika();
     void zmianaHaslaZalogowanegoUzytkownika();
+    void wylogujUzytkownika();
+    bool czyUzytkownikJestZalogowany();
 
 };
 #endif
