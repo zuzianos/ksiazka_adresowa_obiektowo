@@ -125,3 +125,16 @@ void UzytkownikManager::zmianaHaslaZalogowanegoUzytkownika()
     plikZUzytkownikami.zapiszWszystkichUzytkownikowDoPliku(uzytkownicy);
 }
 
+void UzytkownikManager::wylogujUzytkownika()
+{
+    idZalogowanegoUzytkownika=0;
+
+}
+
+bool UzytkownikManager::czyUzytkownikJestZalogowany()
+{
+    if (idZalogowanegoUzytkownika > 0)
+        return true;
+    else
+        return false;
+}
