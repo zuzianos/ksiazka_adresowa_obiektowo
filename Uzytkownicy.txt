@@ -1,5 +1,5 @@
-1|Zuzua|Zuzia|
-1|Tezs|Test|
+1|Zuzia|Testnowe|
+1|Test|Testnowe|
 2|Zuzia2|sdfg|
 3|Cosiek|awesdf|
 4|sd|wsdf|
@@ -12,3 +12,5 @@
 11|ewfrvfd|3wre|
 12|esdfg|waefsrd|
 13|sefdf|asfd|
+14|Nowy|NowyTest|
+15|nowy2|Nosy3|

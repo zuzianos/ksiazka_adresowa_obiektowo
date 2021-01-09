@@ -62,41 +62,42 @@ uzytkownicy= plikZUzytkownikami.wczytajUzytkownikowZPilku();
 }
 
 
-int UzytkownikManager::logowanieUzytkownika()
+void UzytkownikManager::logowanieUzytkownika()
 {
     Uzytkownik uzytkownik;
-    string nlogin = "", nHaslo = "";
+    string login = "", haslo = "";
 
     cout << endl << "Podaj login: ";
-    nlogin = wczytajLinie();
+    login = wczytajLinie();
 
    vector <Uzytkownik>::iterator itr = uzytkownicy.begin();
     while (itr != uzytkownicy.end())
     {
 
-        if ((*itr).pobierzLogin()==nlogin  )
+        if ((*itr).pobierzLogin()==login  )
         {
             for (int iloscProb = 3; iloscProb > 0; iloscProb--)
             {
                 cout << "Podaj haslo. Pozostalo prob: " << iloscProb << ": ";
-                nHaslo = wczytajLinie();
+                haslo = wczytajLinie();
 
-                if ((*itr).pobierzHaslo() == nHaslo)
+                if ((*itr).pobierzHaslo() == haslo)
                 {
                     cout << endl << "Zalogowales sie." << endl << endl;
+                    idZalogowanegoUzytkownika =itr -> pobierzId();
                     system("pause");
-                    return (*itr).pobierzId();
+                    return;
                 }
             }
             cout << "Wprowadzono 3 razy bledne haslo." << endl;
             system("pause");
-            return 0;
+            return;
         }
         itr++;
     }
     cout << "Nie ma uzytkownika z takim loginem" << endl << endl;
     system("pause");
-    return 0;
+    return;
 }
 
 string UzytkownikManager::wczytajLinie()
@@ -105,3 +106,22 @@ string UzytkownikManager::wczytajLinie()
     getline(cin, wejscie);
     return wejscie;
 }
+
+void UzytkownikManager::zmianaHaslaZalogowanegoUzytkownika()
+{
+    string noweHaslo = "";
+    cout << "Podaj nowe haslo: ";
+    noweHaslo = wczytajLinie();
+
+    for (vector <Uzytkownik>::iterator itr = uzytkownicy.begin(); itr != uzytkownicy.end(); itr++)
+    {
+        if ((*itr).pobierzId()== idZalogowanegoUzytkownika)
+        {
+            (*itr).ustawHaslo(noweHaslo);
+            cout << "Haslo zostalo zmienione." << endl << endl;
+            system("pause");
+        }
+    }
+    plikZUzytkownikami.zapiszWszystkichUzytkownikowDoPliku(uzytkownicy);
+}
+
