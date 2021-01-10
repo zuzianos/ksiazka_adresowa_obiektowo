@@ -138,3 +138,8 @@ bool UzytkownikManager::czyUzytkownikJestZalogowany()
     else
         return false;
 }
+
+int UzytkownikManager::pobierzIdZalogowanegoUzytkownika()
+{
+    return idZalogowanegoUzytkownika;
+}

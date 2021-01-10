@@ -1,7 +1,6 @@
-1|Zuzia|Testnowe|
-1|Test|Testnowe|
-2|Zuzia2|sdfg|
-3|Cosiek|awesdf|
+1|Zuzia|Zuzia|
+2|Zuzia2|1234|
+3|Cosiek|1234|
 4|sd|wsdf|
 5|sdf|wedsf|
 6|wdf|df|
