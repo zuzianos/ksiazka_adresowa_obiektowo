@@ -9,7 +9,7 @@ char wczytajZnak();
 
 int main()
 {
-      KsiazkaAdresowa ksiazkaAdresowa("Uzytkownicy.txt");
+      KsiazkaAdresowa ksiazkaAdresowa("Uzytkownicy.txt","Adresaci.txt");
 
     char wybor;
    while (true)
@@ -41,6 +41,11 @@ int main()
 
             switch (wybor)
             {
+            case '1':
+                ksiazkaAdresowa.dodajAdresata();
+                break;
+            case '4':
+                ksiazkaAdresowa.wyswietlWszystkichAdresatow();
             case '8':
                 ksiazkaAdresowa.wylogujUzytkownika();
                 break;
@@ -76,10 +81,11 @@ char wybierzOpcjeZMenuUzytkownika()
     system("cls");
     cout << " >>> MENU UZYTKOWNIKA <<<" << endl;
     cout << "---------------------------" << endl;
-   /* cout << "1. Dodaj adresata" << endl;
-    cout << "2. Wyszukaj po imieniu" << endl;
-    cout << "3. Wyszukaj po nazwisku" << endl;
+    cout << "1. Dodaj adresata" << endl;
     cout << "4. Wyswietl adresatow" << endl;
+    /*cout << "2. Wyszukaj po imieniu" << endl;
+    cout << "3. Wyszukaj po nazwisku" << endl;
+
     cout << "5. Usun adresata" << endl;
     cout << "6. Edytuj adresata" << endl;
     cout << "---------------------------" << endl;
