@@ -27,6 +27,8 @@ void KsiazkaAdresowa::zmianaHaslaZalogowanegoUzytkownika()
 void KsiazkaAdresowa::wylogujUzytkownika()
 {
    uzytkownikManager.wylogujUzytkownika();
+   delete adresatManager;
+   adresatManager= NULL;
 };
 
 bool KsiazkaAdresowa::czyUzytkownikJestZalogowany()

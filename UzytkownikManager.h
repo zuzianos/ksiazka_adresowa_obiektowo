@@ -24,10 +24,12 @@ class UzytkownikManager
     string wczytajLinie();
 
 public:
-    UzytkownikManager(string nazwaPlikuZUzytkownikami): plikZUzytkownikami(nazwaPlikuZUzytkownikami){};
+    UzytkownikManager(string nazwaPlikuZUzytkownikami): plikZUzytkownikami(nazwaPlikuZUzytkownikami){
+        idZalogowanegoUzytkownika=0;
+    uzytkownicy= plikZUzytkownikami.wczytajUzytkownikowZPilku();
+    };
     void rejestracjaUzytkownika ();
     void wypiszWszystkichUzytkownikow();
-    void wczytajUzytkownikowZPiku();
     void logowanieUzytkownika();
     void zmianaHaslaZalogowanegoUzytkownika();
     void wylogujUzytkownika();

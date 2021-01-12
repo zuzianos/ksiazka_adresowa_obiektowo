@@ -14,6 +14,17 @@ class Adresat {
     string adres;
 
 public:
+    Adresat (int idAdresata=0, int idUzytkownika=0,string imie="",string nazwisko="",string numerTel="",string email="",string adres="" )
+    {
+        this->idAdresata= idAdresata;
+        this->idUzytkownika= idUzytkownika;
+        this->imie= imie;
+        this->nazwisko= nazwisko;
+        this->numerTel= numerTel;
+        this->email=email;
+        this->adres=adres;
+    }
+
     void ustawIdAdresata (int noweIdAdresata);
     void ustawIdUzytkownika (int noweIdUzytkownika);
     void ustawImie (string noweImie);

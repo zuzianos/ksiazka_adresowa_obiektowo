@@ -18,6 +18,7 @@ void PlikZAdresatami::dopiszAdresataDoPliku(Adresat adresat)
         {
             plikTekstowy << endl << liniaZDanymiAdresata ;
         }
+        idOstatniegoAdresata++;
         plikTekstowy.close();
         cout << endl << "Dodano adresata." << endl << endl;
     }
