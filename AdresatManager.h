@@ -19,8 +19,11 @@ class AdresatManager
     vector <Adresat> adresaci;
     PlikZAdresatami plikZAdresatami;
     string wczytajLinie();
+    char wczytajZnak();
     string zamienPierwszaLitereNaDuzaAPozostaleNaMale(string tekst);
     void wyswietlDaneAdresata(Adresat adresat);
+    int podajIdWybranegoAdresata();
+    int wczytajLiczbeCalkowita();
 public:
     AdresatManager(string nazwaPlikuZAdresatami, int idZalogowanegoUzytkownika) :
         plikZAdresatami(nazwaPlikuZAdresatami), ID_ZALOGOWANEGO_UZYTKOWNIKA(idZalogowanegoUzytkownika)
@@ -29,6 +32,7 @@ public:
         };
 
     void dodajAdresata();
+    void usunAdresata();
     Adresat podajDaneNowegoAdresata();
     void wyswietlWszystkichAdresatow();
 

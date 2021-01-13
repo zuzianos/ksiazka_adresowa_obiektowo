@@ -54,3 +54,16 @@ void KsiazkaAdresowa::wyswietlWszystkichAdresatow()
 {
     adresatManager->wyswietlWszystkichAdresatow();
 }
+
+void KsiazkaAdresowa::usunAdresata()
+{
+    if (uzytkownikManager.czyUzytkownikJestZalogowany())
+    {
+        adresatManager->usunAdresata();
+    }
+    else
+    {
+        cout << "Nie udalo sie usunac adresata- zaloguj sie ponownie" << endl;
+        system("pause");
+    }
+}

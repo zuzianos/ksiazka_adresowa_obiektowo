@@ -46,6 +46,8 @@ int main()
                 break;
             case '4':
                 ksiazkaAdresowa.wyswietlWszystkichAdresatow();
+            case '5':
+                ksiazkaAdresowa.usunAdresata();
             case '8':
                 ksiazkaAdresowa.wylogujUzytkownika();
                 break;
@@ -83,10 +85,11 @@ char wybierzOpcjeZMenuUzytkownika()
     cout << "---------------------------" << endl;
     cout << "1. Dodaj adresata" << endl;
     cout << "4. Wyswietl adresatow" << endl;
+    cout << "5. Usun adresata" << endl;
     /*cout << "2. Wyszukaj po imieniu" << endl;
     cout << "3. Wyszukaj po nazwisku" << endl;
 
-    cout << "5. Usun adresata" << endl;
+
     cout << "6. Edytuj adresata" << endl;
     cout << "---------------------------" << endl;
     cout << "7. Zmien haslo" << endl;
