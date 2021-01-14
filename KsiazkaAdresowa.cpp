@@ -82,3 +82,13 @@ void KsiazkaAdresowa::edytujAdresata()
 
 
 }
+
+void KsiazkaAdresowa::wyszukajPoImieniu()
+{
+     adresatManager->wyszukajAdresatowPoImieniu();
+}
+
+void KsiazkaAdresowa::wyszukajPoNazwisku()
+{
+     adresatManager->wyszukajAdresatowPoNazwisku();
+}
