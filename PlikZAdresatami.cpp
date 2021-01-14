@@ -214,3 +214,41 @@ void PlikZAdresatami::zmienNazweTymczasowegoPlikuNaNazweOdczytywanegoPliku(strin
     else
     cout << "Nazwa pliku nie zostala zmieniona." << nazwaPlikuZRozszerzeniem << endl;
 }
+
+void PlikZAdresatami::zaktualizujDaneWybranegoAdresata (Adresat adresat, int idEdytowanegoAdresata)
+{
+    fstream odczytywanyPlikTekstowy, tymczasowyPlikTekstowy;
+    string idDoEdycji= MetodyPomocnicze::konwerjsaIntNaString(idEdytowanegoAdresata);
+    string wczytanaLinia;
+    string sprawdzanaLinia;
+    string idWPliku;
+    odczytywanyPlikTekstowy.open(nazwaPlikuZAdresatami.c_str(), ios::in);
+    tymczasowyPlikTekstowy.open(nazwaTymczasowegoPlikuZAdresatami.c_str(), ios::out | ios::app);
+    if (odczytywanyPlikTekstowy.good() == true && idEdytowanegoAdresata != 0)
+    {   while (getline(odczytywanyPlikTekstowy, wczytanaLinia))
+        {
+            sprawdzanaLinia = wczytanaLinia;
+            size_t position= sprawdzanaLinia.find('|');
+            idWPliku= sprawdzanaLinia.erase(position,sprawdzanaLinia.size());
+            if (idDoEdycji!=idWPliku)
+            {
+            tymczasowyPlikTekstowy<<wczytanaLinia<<endl;
+            }
+            else
+            {
+                cout<< adresat.pobierzEmail();
+            tymczasowyPlikTekstowy<<adresat.pobierzIdAdresata()<<"|"<<adresat.pobierzIdUzytkownika()<<"|"<<adresat.pobierzImie()<<"|"<<adresat.pobierzNazwisko()<<"|"<<adresat.pobierzNumerTel()
+            <<"|"<<adresat.pobierzEmail()<<"|"<<adresat.pobierzAdres()<<"|"<<endl;
+
+            }
+        }
+        odczytywanyPlikTekstowy.close();
+        tymczasowyPlikTekstowy.close();
+
+        usunOdczytywanyPlik(nazwaPlikuZAdresatami);
+        zmienNazweTymczasowegoPlikuNaNazweOdczytywanegoPliku(nazwaTymczasowegoPlikuZAdresatami, nazwaPlikuZAdresatami);
+    }
+
+
+
+}

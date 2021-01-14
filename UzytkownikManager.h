@@ -35,6 +35,5 @@ public:
     void wylogujUzytkownika();
     bool czyUzytkownikJestZalogowany();
     int pobierzIdZalogowanegoUzytkownika();
-
 };
 #endif

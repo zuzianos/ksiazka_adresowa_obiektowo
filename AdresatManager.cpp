@@ -173,3 +173,90 @@ char AdresatManager::wczytajZnak()
     }
     return znak;
 }
+
+void AdresatManager::edytujAdresata()
+{
+     system("cls");
+    Adresat adresat;
+    int idEdytowanegoAdresata = 0;
+    int numerLiniiEdytowanegoAdresata = 0;
+    string liniaZDanymiAdresata = "";
+
+    cout << ">>> EDYCJA WYBRANEGO ADRESATA <<<" << endl << endl;
+    idEdytowanegoAdresata = podajIdWybranegoAdresata();
+
+    char wybor;
+    bool czyIstniejeAdresat = false;
+
+     for (vector <Adresat>::iterator itr = adresaci.begin(); itr != adresaci.end(); itr++)
+    {
+        if (itr -> pobierzIdAdresata() == idEdytowanegoAdresata)
+        {
+            czyIstniejeAdresat = true;
+            wybor = wybierzOpcjeZMenuEdycja();
+
+            switch (wybor)
+            {
+            case '1':
+                cout << "Podaj nowe imie: ";
+                itr -> ustawImie(wczytajLinie());
+                itr -> ustawImie(zamienPierwszaLitereNaDuzaAPozostaleNaMale(itr -> pobierzImie()));
+                plikZAdresatami.zaktualizujDaneWybranegoAdresata(*itr, idEdytowanegoAdresata);
+                break;
+            case '2':
+                cout << "Podaj nowe nazwisko: ";
+                itr -> ustawNazwisko(wczytajLinie());
+                itr -> ustawNazwisko(zamienPierwszaLitereNaDuzaAPozostaleNaMale(itr -> pobierzNazwisko()));
+                plikZAdresatami.zaktualizujDaneWybranegoAdresata(*itr, idEdytowanegoAdresata);
+                break;
+            case '3':
+                cout << "Podaj nowy numer telefonu: ";
+                itr -> ustawNumerTel(wczytajLinie());
+                plikZAdresatami.zaktualizujDaneWybranegoAdresata(*itr, idEdytowanegoAdresata);
+                break;
+            case '4':
+                cout << "Podaj nowy email: ";
+                itr -> ustawEmail(wczytajLinie());
+                plikZAdresatami.zaktualizujDaneWybranegoAdresata(*itr, idEdytowanegoAdresata);
+                break;
+            case '5':
+                cout << "Podaj nowy adres zamieszkania: ";
+                itr -> ustawAdres(wczytajLinie());
+                plikZAdresatami.zaktualizujDaneWybranegoAdresata(*itr, idEdytowanegoAdresata);
+                break;
+            case '6':
+                cout << endl << "Powrot do menu uzytkownika" << endl << endl;
+                break;
+            default:
+                cout << endl << "Nie ma takiej opcji w menu! Powrot do menu uzytkownika." << endl << endl;
+                break;
+            }
+        }
+    }
+    if (czyIstniejeAdresat == false)
+    {
+        cout << endl << "Nie ma takiego adresata." << endl << endl;
+    }
+    system("pause");
+}
+
+char AdresatManager:: wybierzOpcjeZMenuEdycja()
+{
+    char wybor;
+
+    cout << endl << "   >>> MENU  EDYCJA <<<" << endl;
+    cout << "---------------------------" << endl;
+    cout << "Ktore dane zaktualizowac: " << endl;
+    cout << "1 - Imie" << endl;
+    cout << "2 - Nazwisko" << endl;
+    cout << "3 - Numer telefonu" << endl;
+    cout << "4 - Email" << endl;
+    cout << "5 - Adres" << endl;
+    cout << "6 - Powrot " << endl;
+    cout << endl << "Twoj wybor: ";
+    wybor = wczytajZnak();
+
+    return wybor;
+}
+
+
