@@ -36,4 +36,4 @@ public:
 
 };
 
-#endif //PLIKZADRESATAMI_H
+#endif
